@@ -1,0 +1,25 @@
+\frametitle{Common \LaTeX {} Commands}
+\begin{exampleblock}{Commands}
+        \centering
+        \footnotesize
+        \begin{tabular}{llll}
+            \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+            Chapter & Section & Subsection & Paragraph \\\hline
+            \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+            Centering & Emphasis & Verbatim & URL \\\hline
+            \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+            Footnote & Item & Caption & Graphics \\\hline
+            \cmd{label} & \cmd{cite} & \cmd{ref} \\
+            Label & Cite & Reference\\\hline
+        \end{tabular}
+    \end{exampleblock}
+    \begin{exampleblock}{Environments}
+        \centering
+        \footnotesize
+        \begin{tabular}{lll}
+            \env{table} & \env{figure} & \env{equation}\\
+            Table & Figure & Equation \\\hline
+            \env{itemize} & \env{enumerate} & \env{description}\\
+            Unnumbered List & Numbered List & Description \\\hline
+        \end{tabular}
+    \end{exampleblock}
