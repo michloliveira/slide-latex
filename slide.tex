@@ -1,0 +1,62 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{NTU}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,stackengine}
+
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+\author{Discente: Michel Tavares de Oliveira  \\ Orientador: Jean Carlos Teixeira de Araújo}
+\title[Avaliação da Eficiência Energética Entre Linguagens de Programação]{Avaliação da Eficiência Energética Entre Linguagens de Programação}
+%\subtitle{This is the Subtitle of Your Presentation}
+\institute{Universidade Federal do Agreste de Pernambuco}
+\date{Maio de 2021}
+
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \vspace{-10pt}
+    \begin{figure}[htpb]
+        \begin{center}
+            \includegraphics[width=0.13\linewidth]{images/ufapelogo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+\input{sections/materiais-e-metodos}
+
+\input{sections/design-e-execucao}
+
+
+\begin{frame}[allowframebreaks]
+    \printbibliography
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\Huge EOF}
+    \end{center}
+\end{frame}
+
+\end{document}
