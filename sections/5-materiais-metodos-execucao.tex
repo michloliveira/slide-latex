@@ -6,7 +6,7 @@
         \item Otimizar o gerenciamento energético dos processadores Intel
         \item Monitoramento de alguns parametros como temperatura, potência e consumo energético
         \item Foi implementado a nível de hardware a partir da 6ª geração dos processadores Intel
-        \item Segundo Khan at al 2018 \cite{khan2018IntelRapl}, a precisão do RAPL é bastante promisora e os valores reportados são precisos suficientemente para prever e modelar sistemas.
+        \item A precisão do RAPL é bastante promisora e os valores reportados são precisos suficientemente para prever e modelar sistemas \cite{khan2018IntelRapl}
     \end{itemize}
 \end{frame}
 
@@ -14,7 +14,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=0.61\linewidth]{images/powerDomainsRAPL.png}
-        \caption{Intel RAPL Power Domains. Fonte: Khan at al 2018 \cite{khan2018IntelRapl}}
+        \caption{Intel RAPL Power Domains. \cite{khan2018IntelRapl}}
         \label{fig:powerDomains}
     \end{figure}
 \end{frame}
@@ -22,11 +22,11 @@
 \begin{frame}{Contadores de energia e limitações}
     \begin{itemize}
         %\item Model-Specific Registers (MSRs) são registradores que fornecem acesso a diversas características e funcionalidades nos processadores x86
-        \item MSR\_RAPL\_POWER\_UNIT de 32 bits sem sinal (0 a 4,294,967,295) 
-        \item O registrador começa a contar a partir da inicialização do computador
-        \item Quando este valor limite é atingido, o valor do registrador é reinicializado para 0 novamente.
+        \item MSR\_RAPL\_POWER\_UNIT de 32 bits sem sinal (0 a 4,294,967,295);
+        \item O registrador começa a contar a partir da inicialização do computador;
+        \item Quando este valor limite é atingido, o valor do registrador é zerado;
         \item É de grande importância considerar a reinicialização
-        dos registradores para não obter dados incorretos durante os experimentos
+        dos registradores para não obter dados incorretos durante os experimentos.
     \end{itemize}
 \end{frame}
 
@@ -34,9 +34,9 @@
 \begin{frame}{Power Capping Framework}
     \begin{itemize}
         \item Ferramenta integrada ao Kernel Linux
-        \item Permite expor informações de energia via \emph{sysfs} exportando informações sistemas de arquivos
+        \item Permite expor informações de energia via \emph{sysfs};
         \item O framework cria de forma automática, uma árvore de diretórios com
-        diversos objetos referente a interface de energia utilizada (The Linux Kernel Archives, 2024).
+        diversos objetos referente a interface de energia utilizada \cite{kernel_org}.
     \end{itemize}
 \end{frame}
 
@@ -52,7 +52,7 @@
 \begin{frame}{Shell}
     \begin{itemize}
         \item Interface entre o usuário e o sistema operacional
-        \item O Shell é uma ferramenta essencial quando o foco é ter mais controle sobre o sistema operacional (RAYMOND, 2003)
+        \item O Shell é uma ferramenta essencial quando o foco é ter mais controle sobre o sistema operacional \cite{raymond2003art}
         \item Funciona como um intermediário entre usuário e SO
         \item Essa interação pode ocorrer de forma iterativa e não iterativa
     \end{itemize}
@@ -60,10 +60,10 @@
 
 \begin{frame}{Shell script}
     \begin{itemize}
-        \item É uma linguagem de script voltada para automatização de tarefas em sistemas operacionais, sendo ela interpretada por um interpretador Shell
-        \item Permite realizar diversas tarefas executando apenas um arquivo de script
-        \item O interpretador analisa linha por linha e executa os comandos encontrados de forma sequencial
-        \item Bastante útil ao executar diversos comandos, assim como a possibilidade de realização de tarefas repetitivas e automáticas
+        \item É uma linguagem de script voltada para automatização de tarefas em sistemas operacionais, sendo ela interpretada por um interpretador Shell;
+        \item Permite realizar diversas tarefas executando apenas um arquivo de script;
+        \item O interpretador analisa linha por linha e executa os comandos encontrados de forma sequencial;
+        \item Bastante útil ao executar diversos comandos, assim como a possibilidade de realização de tarefas repetitivas e automáticas.
     \end{itemize}
 \end{frame}
 
@@ -76,8 +76,8 @@
 
 \begin{frame}{GNU Time}
     \begin{itemize}
-        \item Utilizada para medir tempo e recursos consumidos por uma aplicação durante sua execução
-        \item Utilização é bastante simples, com opções salvar a saída dos resultados em arquivo de texto
+        \item Utilizada para medir tempo e recursos consumidos por uma aplicação durante sua execução;
+        \item Utilização é bastante simples, permitindo que os usuários escolham os dados específicos que desejam extrair e analisar.
     \end{itemize}
     
     \begin{center}
@@ -88,9 +88,9 @@
 \subsection{The Computer Language Benchmark Game}
 \begin{frame}{The Computer Language Benchmark Game}
     \begin{itemize}
-        \item É um projeto de software livre que fornece um repositório com uma variedade de algorítimos simples que podem ser implementados em diversas linguagens de programação
-        \item Um web site que centraliza todos os dados sobre códigos fontes, execução de teste e resultados
-        \item O projeto fornece, além do código fonte, informações sobre compilação e execução dos algorítimos
+        \item É um projeto de software livre que fornece um repositório com uma variedade de problemas simples que podem ser implementados em diversas linguagens de programação;
+        \item Um web site que centraliza dados sobre códigos fontes, execução de teste e resultados;
+        \item O projeto fornece, além do código fonte, informações sobre compilação e execução dos algorítimos.
     \end{itemize}
 \end{frame}
 \begin{frame}{CLBG Benchmarks}
@@ -271,3 +271,36 @@
     \end{table}
 \end{frame}
 
+\subsection{Execução dos experimentos}
+
+\begin{frame}{Scripts de instalação}
+    \begin{itemize}
+        \item Objetivo de agilizar a instalação de pacotes e dependencias das linguagens de programação;
+        \item Garante que todas as dependencias serão instaladas para execução dos experimentos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Scripts de execução}
+    \begin{itemize}
+        \item Objetivo coletar os dados reportados pelo RAPL salva em um arquivo para uma análise posterior;
+        \item 100 execuçãoe cada problema do CLBG;
+        \item intervalo de 10 minutos entre os problemas;
+        \item Considerado a média da 100 execuções para calcular os resultados.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Scripts de execução}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.55\linewidth]{images/scriptMonitor.png}
+        %\caption{Intel RAPL Power Domains. Fonte: Khan at al 2018 \cite{khan2018IntelRapl}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Designin de excecução }
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{images/fluxograma.pdf}
+        %\caption{Intel RAPL Power Domains. Fonte: Khan at al 2018 \cite{khan2018IntelRapl}}
+    \end{figure}
+\end{frame}
