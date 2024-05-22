@@ -4,20 +4,20 @@
 \begin{frame}{Intel RAPL}
     \begin{itemize}
         \item Otimizar o gerenciamento energético dos processadores Intel
-        \item Monitoramento de alguns parametros como temperatura, potência e consumo energético
+        \item Monitoramento de alguns parâmetros como temperatura, potência e consumo energético
         \item Foi implementado a nível de hardware a partir da 6ª geração dos processadores Intel
-        \item A precisão do RAPL é bastante promisora e os valores reportados são precisos suficientemente para prever e modelar sistemas \cite{khan2018IntelRapl}
+        \item A precisão do RAPL é bastante promisora e os valores reportados são precisos suficientemente para prever e modelar sistemas. \cite{khan2018IntelRapl}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{RAPL Power Domain}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.61\linewidth]{images/powerDomainsRAPL.png}
-        \caption{Intel RAPL Power Domains. \cite{khan2018IntelRapl}}
-        \label{fig:powerDomains}
-    \end{figure}
-\end{frame}
+% \begin{frame}{RAPL Power Domain}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.61\linewidth]{images/powerDomainsRAPL.png}
+%         \caption{Intel RAPL Power Domains. \cite{khan2018IntelRapl}}
+%         \label{fig:powerDomains}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{Contadores de energia e limitações}
     \begin{itemize}
@@ -52,9 +52,9 @@
 \begin{frame}{Shell}
     \begin{itemize}
         \item Interface entre o usuário e o sistema operacional
-        \item O Shell é uma ferramenta essencial quando o foco é ter mais controle sobre o sistema operacional \cite{raymond2003art}
+        %\item O Shell é uma ferramenta essencial quando o foco é ter mais controle sobre o sistema operacional \cite{raymond2003art}
         \item Funciona como um intermediário entre usuário e SO
-        \item Essa interação pode ocorrer de forma iterativa e não iterativa
+        \item Essa interação pode ocorrer de forma interativa e não interativa
     \end{itemize}
 \end{frame}
 
@@ -62,7 +62,7 @@
     \begin{itemize}
         \item É uma linguagem de script voltada para automatização de tarefas em sistemas operacionais, sendo ela interpretada por um interpretador Shell;
         \item Permite realizar diversas tarefas executando apenas um arquivo de script;
-        \item O interpretador analisa linha por linha e executa os comandos encontrados de forma sequencial;
+        %\item O interpretador analisa linha por linha e executa os comandos encontrados de forma sequencial;
         \item Bastante útil ao executar diversos comandos, assim como a possibilidade de realização de tarefas repetitivas e automáticas.
     \end{itemize}
 \end{frame}
@@ -284,7 +284,7 @@
     \begin{itemize}
         \item Objetivo coletar os dados reportados pelo RAPL salva em um arquivo para uma análise posterior;
         \item 100 execuçãoe cada problema do CLBG;
-        \item intervalo de 10 minutos entre os problemas;
+        \item Intervalo de 10 minutos entre os problemas;
         \item Considerado a média da 100 execuções para calcular os resultados.
     \end{itemize}
 \end{frame}
@@ -297,7 +297,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Designin de excecução }
+\begin{frame}{Fluxograma de execução}
     \begin{figure}
         \centering
         \includegraphics[width=0.65\linewidth]{images/fluxograma.pdf}
